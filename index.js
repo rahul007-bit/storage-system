@@ -46,8 +46,8 @@ app.use(morgan("dev"));
 
 app.use(routes);
 
-app.listen(8000, () => {
-  console.info(`🚀 Express server listening on port 8000`);
+app.listen(8001, () => {
+  console.info(`🚀 Express server listening on port 8001`);
 });
 
 // check if public/upload folder exists

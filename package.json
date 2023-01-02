@@ -1,9 +1,19 @@
 {
   "name": "storage-system",
   "version": "1.0.0",
+  "author": {
+    "name": "Rahul Yadav",
+    "email": "yadavrahul8141@yahoo.com",
+    "url": "https://github.com/rahul007-bit"
+  },
+  "description": "Storage system for the web",
   "main": "index.js",
   "license": "MIT",
   "type": "module",
+  "repository": {
+    "url": "git@github.com:rahul007-bit/storage-system.git",
+    "type": "git"
+  },
   "scripts": {
     "start": "node index.js --enable-libass --enable-libmp3lame",
     "dev": "nodemon index.js --enable-libass --enable-libmp3lame"

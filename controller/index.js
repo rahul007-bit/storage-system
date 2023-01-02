@@ -32,7 +32,7 @@ controller.createStorage = async (req, res) => {
 
     return res.json({
       status: "ok",
-      message: "Storage created successfully",
+      message: "Storage Created Successfully",
     });
   } catch (error) {
     console.error(error);
@@ -79,6 +79,7 @@ controller.uploadFile = async (req, res) => {
         return res.json({
           status: "ok",
           message: "File uploaded successfully",
+          file_path: filePath,
         });
       }
       return res.status(400).json({
@@ -208,7 +209,11 @@ controller.textFileToAudio = async (req, res) => {
       storageToken.uploadedFiles.push(audioFileName);
 
       await storageToken.save();
-      return res.sendFile(audioFilePath, { root: "." });
+      return res.json({
+        status: "ok",
+        message:"text to speech converted",
+        audio_file_path: audioFilePath,
+      });
     });
   } catch (error) {
     console.error(error);
@@ -299,7 +304,7 @@ controller.mergeImageAndAudio = async (req, res) => {
       await storageToken.save();
       return res.json({
         status: "ok",
-        message: "File merged successfully",
+        message: "Video Created Successfully",
         video_file_path: mergedFilePath,
       });
     });
@@ -379,7 +384,7 @@ controller.mergeVideoAndAudio = async (req, res) => {
       await storageToken.save();
       return res.json({
         status: "ok",
-        message: "File merged successfully",
+        message: "Video and Audio Merged Successfully",
         video_file_path: mergedFilePath,
       });
     });
@@ -463,7 +468,7 @@ controller.mergeAllVideo = async (req, res) => {
 
       return res.json({
         status: "ok",
-        message: "File merged successfully",
+        message: "Merged All Video Successfully",
         video_file_path: mergedFilePath,
       });
     });

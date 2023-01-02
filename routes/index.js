@@ -8,7 +8,10 @@ const routes = Router();
 
 routes.get("/", (req, res) => {
   res.json({
-    message: "Hello World",
+    greeting: `Good ${new Date().getHours() < 12 ? "Morning" : "Evening"}`,
+    creator: "Rahul Yadav",
+    message: "Welcome to Storage System",
+    github: "github.com/rahul007-bit/storage-system",
   });
 });
 
