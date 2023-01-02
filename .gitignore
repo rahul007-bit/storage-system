@@ -2,3 +2,4 @@ public
 tmp
 *.log
 node_modules
+.idea
