@@ -16,6 +16,8 @@ app.use(cookieParser());
 app.use(cors());
 app.options("*", cors());
 
+
+mongoose.set('strictQuery', false);
 mongoose.connect(
   "mongodb://localhost:27017/storage-system",
   {
@@ -30,7 +32,6 @@ mongoose.connect(
     }
   }
 );
-
 const db = mongoose.connection;
 
 db.on("error", () => {
@@ -50,8 +51,9 @@ app.listen(8001, () => {
   console.info(`🚀 Express server listening on port 8001`);
 });
 
-// check if public/upload folder exists
-if (!fs.existsSync("public/upload")) {
+// check if public and public/upload folder exists
+if (!fs.existsSync("public")) {
+  fs.mkdirSync("public");
   fs.mkdirSync("public/upload");
 }
 
