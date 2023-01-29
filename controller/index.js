@@ -211,7 +211,7 @@ controller.textFileToAudio = async (req, res) => {
       await storageToken.save();
       return res.json({
         status: "ok",
-        message:"text to speech converted",
+        message: "text to speech converted",
         audio_file_path: audioFilePath,
       });
     });
@@ -292,6 +292,7 @@ controller.mergeImageAndAudio = async (req, res) => {
     // -y ${mergedFilePath} - output file path
 
     exec(command, async (err, stdout, stderr) => {
+      console.log("test");
       if (err) {
         console.error(err);
         return res.status(500).json({

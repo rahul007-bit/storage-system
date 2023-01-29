@@ -16,8 +16,7 @@ app.use(cookieParser());
 app.use(cors());
 app.options("*", cors());
 
-
-mongoose.set('strictQuery', false);
+mongoose.set("strictQuery", false);
 mongoose.connect(
   "mongodb://localhost:27017/storage-system",
   {
